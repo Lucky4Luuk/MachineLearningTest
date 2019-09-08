@@ -46,3 +46,6 @@ model.fit(train_images, train_labels, epochs=5) #I think epochs just means the a
 
 # Evaluating the test images using our model
 test_loss, test_acc = model.evaluate(test_images, test_labels)
+print("Test accuracy: {}".format(test_acc))
+#The accuracy on the test dataset is lower than the accuracy on the training dataset. This is called 'overfitting'
+#Overfitting is where a ML model performs worse on new data than on the training data
