@@ -49,3 +49,13 @@ test_loss, test_acc = model.evaluate(test_images, test_labels)
 print("Test accuracy: {}".format(test_acc))
 #The accuracy on the test dataset is lower than the accuracy on the training dataset. This is called 'overfitting'
 #Overfitting is where a ML model performs worse on new data than on the training data
+
+# Making predictions
+predictions = model.predict(test_images)
+#A prediction is an array of 10 numbers (remember, 10 nodes in the last layer?)
+#Each of these 10 numbers shows the confidence of the model that the image corresponds to that class
+#So if we want to know which class the model thinks the clothing corresponds to, we just have to take the highest confidence value
+
+#To predict a single image, you have to add it to a list like this:
+#img = (np.expand_dims(img,0))]
+#Then you can simply call model.predict() on img
